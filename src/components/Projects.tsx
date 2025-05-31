@@ -13,7 +13,7 @@ const Projects = () => {
             className="project-image-link"
           >
             <img
-              src="/images/kyaml2go.png"
+              src="/port-folio/images/kyaml2go.png"
               alt="kyaml2go website screenshot"
               className="project-image"
             />
@@ -62,7 +62,7 @@ const Projects = () => {
             className="project-image-link"
           >
             <img
-              src="/images/goCorona.gif"
+              src="/port-folio/images/goCorona.gif"
               alt="Corona Tracker screenshot"
               className="project-image"
             />

@@ -140,7 +140,7 @@ body {
 }
 
 .nav-links a:hover::after {
-  width: 80%;
+  width: 100%;
 }
 
 .resume-button {
