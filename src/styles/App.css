@@ -64,6 +64,13 @@ body {
   position: relative;
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .logo {
   font-size: 2rem;
   font-weight: 700;
@@ -77,6 +84,8 @@ body {
   list-style: none;
   gap: 2rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .header-right-links {
@@ -91,6 +100,8 @@ body {
   list-style: none;
   gap: 1rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .header-right-links a {
@@ -755,37 +766,91 @@ section {
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
-    align-items: center;
     padding: 1rem;
   }
 
-  .nav-links {
-    margin-bottom: 1rem;
-    gap: 1rem;
+  .nav-container {
     flex-direction: column;
     align-items: center;
   }
 
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+    display: none; /* Hide by default on mobile */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem;
+    width: 100%;
+  }
+
   .header-right-links {
     position: static;
-    top: auto;
-    right: auto;
     transform: none;
     width: 100%;
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
   }
 
   .header-right-links ul {
     justify-content: center;
     gap: 1.5rem;
+    margin: 0;
+    padding: 0;
   }
 
-  .header-right-links a {
-    padding: 0.5rem;
+  .header-right-links .social-icon {
+    font-size: 1.5rem;
+    padding: 5px;
   }
 
-  .header-right-links .resume-button {
-    padding: 0.5rem 1.5rem !important;
+  /* Add hamburger menu button */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .resume-button {
+    margin: 0.5rem 0;
   }
 
   .hero h1 {
