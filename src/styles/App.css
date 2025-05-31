@@ -61,19 +61,55 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
+  font-family: monospace, sans-serif;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 2rem;
+  align-items: center;
+}
+
+.header-right-links {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.header-right-links ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header-right-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: monospace, sans-serif;
+}
+
+.header-right-links .social-icon {
+  font-size: 1.5rem;
+  animation: pulse-icon-background 2s infinite ease-in-out;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.header-right-links .social-icon:hover {
+  color: #3498db;
 }
 
 .nav-links a {
@@ -83,6 +119,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.3s ease;
+  font-family: monospace, sans-serif;
 }
 
 .nav-links a:hover {
@@ -118,6 +155,19 @@ body {
 
 .resume-button:hover {
   background: #2980b9 !important;
+}
+
+/* Define the keyframes for the background pulse animation */
+@keyframes pulse-icon-background {
+  0% {
+    background-color: rgba(52, 152, 219, 0.1);
+  }
+  50% {
+    background-color: rgba(52, 152, 219, 0.4);
+  }
+  100% {
+    background-color: rgba(52, 152, 219, 0.1);
+  }
 }
 
 /* Define the keyframes for the border pulse animation */
@@ -182,7 +232,6 @@ section {
   font-weight: bold;
   padding: 0 15px;
   white-space: nowrap;
-  animation: float-skills 15s infinite linear;
 }
 
 /* Styles for individual skills with different colors and animation timings */
@@ -261,14 +310,13 @@ section {
 .skills-background span:nth-child(13) {
   color: #9966ff; /* Medium Purple */
   animation-delay: 9.6s;
-  animation-delay: 18s;
-  animation-duration: 44s;
+  animation-duration: 36s;
 }
 
 .skills-background span:nth-child(14) {
   color: #ff6699; /* Hot Pink */
-  animation-delay: 19.5s;
-  animation-duration: 46s;
+  animation-delay: 10.4s;
+  animation-duration: 38s;
 }
 
 /* Add more nth-child rules if you add more skills in the future */
@@ -395,37 +443,73 @@ section {
   color: #ffffff;
   margin-bottom: 2rem;
   font-size: 2.5rem;
+  text-align: center;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  width: 2px;
+  background-color: #ffffff;
 }
 
 .experience-item {
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
+  color: #333;
   margin-bottom: 2rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: none;
   transition: transform 0.3s ease;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 1.6rem;
+  width: 16px;
+  height: 16px;
+  background-color: #3498db;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-item:not(:last-child)::after {
+  display: none;
 }
 
 .experience-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .experience-item h3 {
-  color: #ffffff;
+  color: #333;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
 
 .experience-item .company {
-  color: #3498db;
+  color: #555;
   font-weight: 500;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .experience-item .date {
-  color: #e0e0e0;
+  color: #777;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
@@ -437,7 +521,7 @@ section {
 }
 
 .experience-item ul li {
-  color: #e0e0e0;
+  color: #333;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
@@ -671,13 +755,37 @@ section {
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
   }
 
   .nav-links {
-    flex-direction: column;
-    text-align: center;
+    margin-bottom: 1rem;
     gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-right-links {
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .header-right-links ul {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .header-right-links a {
+    padding: 0.5rem;
+  }
+
+  .header-right-links .resume-button {
+    padding: 0.5rem 1.5rem !important;
   }
 
   .hero h1 {
@@ -775,21 +883,4 @@ section {
 .cta-secondary:hover {
   background: rgba(52, 152, 219, 0.1);
   transform: translateY(-2px);
-}
-
-@keyframes float-skills {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.8;
-  }
-  75% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
 } 

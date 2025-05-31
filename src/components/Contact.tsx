@@ -40,28 +40,6 @@ const Contact: React.FC = () => {
           <span>youraksh@example.com</span>
         </div>
       </div>
-      <div className="social-links">
-        <a
-          href="https://github.com/bajran"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-icon"
-        >
-          <span>
-            <GithubIcon size={32} />
-          </span>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/youraksh/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="social-icon"
-        >
-          <span>
-            <LinkedInIcon size={32} />
-          </span>
-        </a>
-      </div>
     </section>
   );
 };

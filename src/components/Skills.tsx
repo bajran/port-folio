@@ -20,7 +20,6 @@ const Skills: React.FC = () => {
           <ul className="skill-list">
             <li>Node.js</li>
             <li>Express.js</li>
-            <li>Python</li>
             <li>RESTful APIs</li>
             <li>Database Design</li>
           </ul>
@@ -30,7 +29,6 @@ const Skills: React.FC = () => {
           <ul className="skill-list">
             <li>Git & GitHub</li>
             <li>Docker</li>
-            <li>AWS</li>
             <li>CI/CD</li>
             <li>Agile Methodologies</li>
           </ul>
