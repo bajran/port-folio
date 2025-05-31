@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           </li>
           <li>
             <a
-              href="/resume/resume.pdf"
+              href="/port-folio/resume/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="resume-button"
